@@ -1,0 +1,273 @@
+﻿LEVEL 1: FOUNDATIONS FOR MOBILE
+
+Welcome to Journey
+into Mobile.
+This is level one, Foundations
+for Mobile.
+And in this level,
+we're going to be
+covering three main things.
+First, we're going to be talking
+about what is the
+mobile web.
+Then second, we're going to
+cover a brief overview of the
+course, and then finally,
+we're going to look at
+relative font sizing.
+
+So let's first talk about
+the mobile web.
+So what is the mobile web?
+Well, there's actually no mobile
+web, in as much as
+there isn't necessarily
+say a desktop web.
+You see, this isn't the web.
+This is the web.
+And what I mean by that is that
+the web isn't limited to
+one particular device or one
+particular environment.
+
+Tim Berners-Lee has a great
+thought here where he says
+that the primary design
+principle underlying the web's
+usefulness and growth
+is universality.
+And that's really what we're
+talking about here.
+We're talking about
+the universal web.
+See, the web must work with
+any form of information.
+And it must be accessible
+from any device.
+And that's really our
+responsibility as web
+designers and web developers,
+is to make sure that our
+designs, that are sites, work
+on the universal web.
+That they don't just work in a
+desktop environment, or just
+work in a mobile environment.
+So our goal is to make sure that
+we are working towards
+this universal web.
+Because, at the end of the day,
+this will be the web.
+
+We're going to see many more
+devices come out, many more
+environments that we're going to
+have to make sure that our
+sites and that our applications
+actually work in.
+So when we talk about mobile
+design, or adaptive design, or
+even responsive design, really
+all we're talking about is
+just web design.
+
+So in this course, we're going
+to look at three main areas.
+First, we're going to cover
+fluid layouts and why those
+are important.
+Second, we're going to talk
+about adaptive design.
+And then finally, we're going
+to wrap up talking about
+responsive design.
+
+But before we get into any of
+that, we're going to cover a
+little bit about fluid
+typesetting.
+And here's what I
+mean with that.
+Here's the image that we're
+going to be working with.
+Let's first take a look at the
+mark-up for this image.
+It's pretty simple.
+All we have is an h1
+with a link inside.
+Let's take a look at how our
+styles render for this
+particular mark-up.
+Once again, pretty simple.
+Our h1, we have it set at 30
+pixels for our font size.
+And this would be fine, except
+that we want our fonts to be
+proportional, or relative in
+size, so that when we talk
+about scaling sites we
+can actually have our
+font scale with us.
+
+So instead of having our font
+size be 30 pixels, we actually
+want to convert our pixel
+values into ems.
+So I'm going to show
+you how to do that.
+
+The standard font size for most
+browsers is 16 pixels.
+But, as you know, browsers
+can be kind of finicky.
+So we want to make sure that for
+all of the browsers that
+we're working with we have a
+standard font size set on our
+HTML element.
+So that's why we've gone ahead
+and set our standard font size
+to be 16 pixels.
+
+But you'll notice down below
+that I've also got another
+declaration for font size
+in our body element.
+I've got this size set
+at 62 and 1/2%.
+Now, what is this for?
+Well, since our standard font
+size is 16 pixels, that means
+that one em is equal
+to 16 pixels.
+But 16 is kind of a rough
+number to divide by.
+And you'll see why that
+matters in a minute.
+So what we've done here is we've
+actually taken 62 and
+1/2% of 16, which is 10.
+So we've converted our font size
+to be from 16 pixels to
+10 pixels, which is going
+to be a much easier
+value to divide by.
+
+Now why does that matter?
+Well, we're going to be using
+this formula in order to
+convert our pixel
+values into ems.
+This formula is target divided
+by context equals our result.
+And, in this case, our target is
+our target font size, which
+we want to divide by
+the font size of
+our containing element.
+And that's going to give
+us the value that we
+need for our ems.
+
+So, in this case, we take our
+30 pixels, which was the
+value of our h1.
+We're going to divide that by
+our standard default font
+size, which is 10 pixels.
+And then we get our
+value of 3 ems.
+So we plug that back
+into our CSS.
+In place of 30 pixels,
+now we have 3 ems.
+And, voila, we've
+got our relative
+proportional font size.
+So that's great.
+
+As you can see from our
+image here, it looks
+relatively the same.
+But we still have to work on
+that link because our link
+inside of our h1 is
+now inheriting the
+properties for our h1.
+So let's go ahead and do that.
+For our link we have it set at
+14 pixels, and we need to
+convert our pixel
+values into ems.
+So we're going to use
+our formula again.
+Now, would we do the same
+thing that we do before?
+In this case, 14
+divided by 10.
+Well, let's see how
+that looks.
+Unfortunately, that doesn't
+work, and that's because we
+have the wrong context.
+You see, in this case, our
+context is not the default
+browser font size, but actually
+the size of our h1,
+because our link is inside
+of our h1 element.
+So in this case, we actually
+need to change our context
+value from 10 pixels to 30
+pixels because, remember, 30
+pixels was the original
+as of our h1 element.
+So if we do this, we get this
+value, and we can plug that
+into our CSS.
+And now it renders properly.
+
+One quick note here.
+You might have noticed with our
+last conversion that it's
+a pretty ugly number.
+But that's OK.
+We really should let
+the browser do the
+heavy lifting here.
+We don't need to round up or
+round down because this is
+actually the exact value of
+our original pixel size.
+So, in this case, we're
+not going to round.
+We're just going to keep that
+value like so, plug it in to
+our CSS, and it's going
+work just fine.
+
+So why do we spend the time
+covering relative font sizing?
+We're supposed to be talking
+about mobile design, right?
+Well, yes.
+But see, it's important for you
+to understand the formula
+for actually converting pixels
+to ems because when we start
+talking about fluid layouts and
+layouts that scale, we're
+actually going to be using
+the same formula.
+So it's important for you to
+grasp the concept, and this is
+a pretty easy way for
+you to do that.
+So this level is fairly
+simplistic, and the challenges
+might not be all that
+difficult for
+you, but that's OK.
+We're going to get to
+more advanced stuff
+later on in the course.

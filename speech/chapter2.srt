@@ -1,0 +1,392 @@
+LEVEL 2: FLUID LAYOUTS
+
+﻿You're watching Journey into
+Mobile, and this is Level 2,
+Fluid Foundations.
+
+In this level, we're going to
+be covering the foundations
+for fluid layouts and
+then also talk
+about the fluid grid.
+
+Now, why are we talking about
+fluid layouts in a mobile
+design course?
+Well, when we talk about fluid
+layouts, really what we're
+talking about are layouts
+that scale based on the
+size of the view port.
+That could be the browser,
+that could be the device,
+whatever it is that
+you're using.
+
+So what makes up a fluid site?
+Well, there's really two
+main things that
+make up a fluid site.
+
+The first is fluid sites are
+usually based on a fluid grid.
+And, basically, what this means
+is the grid is a series
+of same size columns spaced
+apart evenly across the page.
+Now, this helps from a design
+standpoint to make the design
+more legible to the user, and
+just better organized from a
+design standpoint.
+
+Additionally, fluid layouts
+also have relative values.
+Most of the time they're
+in percentages.
+So, for instance, instead of
+setting an element, say at 500
+pixels like you see here, we
+could convert that into a
+percentage of 50%.
+
+So now, if you were to resize
+that element, it would be
+proportional, or relative, to
+its containing element.
+
+So in order to illustrate
+this concept we're going
+to use a demo site.
+Now this demo site is actually
+built on a fixed layout, and
+we're going to convert
+that fixed layout
+into a fluid layout.
+How are we going to do this?
+Well, we're going to actually
+use the same formula that we
+used to convert our pixel values
+to ems back in Level 1.
+
+Let's first go over the mark up
+of the site just to get you
+familiar with how the
+site is structured.
+
+We have a main container div
+called site that basically
+contains all of the elements
+of the site.
+Additionally, we have a sidebar
+element over here to
+the left, and then we have our
+main content area which
+includes all of our content.
+
+So when we're talking about our
+site container, currently
+we have it set at a width
+of 940 pixels.
+Now this is a fixed width site,
+and there's nothing
+wrong with fixed widths, but
+the problem is they don't
+necessarily scale with
+the view port size.
+They're going to be static.
+They're going to be fixed.
+So we want to actually create
+this in a way that the site
+scales with the view
+port size.
+So instead of 940 pixels,
+we need to set this as a
+percentage.
+
+Now, when we're talking about
+our main site container,
+there's really not a magic
+formula that we can use to
+determine the proper
+percentage.
+It's really a matter of trial
+and error because you want to
+make sure that the design looks
+good in the browser.
+So in our case I've played
+around with a little bit and
+have determined that 90% percent
+width is a good value
+for our site.
+
+So if we take a look at what
+this looks like, you can see
+that at a smaller view port size
+it really doesn't look
+any different, which
+is a good thing.
+
+But as we scale the view port
+you can see how things change.
+The site no longer is centered
+in the browser, and you can
+see everything is flush left.
+Now, the main site container,
+div class site, is actually
+scaling at 90%.
+But the problem is that
+the rest of our
+elements are still fixed.
+So we need to convert those.
+
+The first thing we're going to
+look at is going to be our
+sidebar element.
+So here's our markup for that.
+It's pretty straightforward.
+
+We have a section with a class
+of sidebar, we have a header,
+then we have our nav elements,
+and then beneath that we have
+our footer.
+
+Let's take a look at
+the styles for
+this particular section.
+In this case, we have our width
+set at 305 pixels, which
+is obviously fixed, we
+need to convert that.
+
+So we're going to bring out
+our formula once again.
+In this case, our sidebar
+width is going to be our
+target, and the width of our
+main site container is going
+to be our context.
+So, in this case, we're going
+to divide 305 pixels by 940
+pixels, and then you're going
+to get this lovely number
+which you see here.
+
+Now, since we're dealing with
+percentages, we actually need
+to move the decimal point
+over two places.
+
+So we get a value
+of 32.4460809%.
+Once again, it's one of those
+really long numbers, but we
+can let the browser do the heavy
+lifting and just put
+that into our CSS and move on.
+
+So as you can see, we've
+replaced our fixed width of
+305 pixels with a relative
+percentage, and that's going
+to allow this section to
+scale appropriately.
+Let's take a look at what that
+looks like in the browser.
+So this looks good from a
+sidebar element, but it's
+creeping into our content
+area which,
+obviously, isn't very good.
+
+So we need to go ahead and
+fix that section next.
+All right, so as you can see
+from our mark up here, we have
+a section with a class of
+content, we have an aside
+which gives us that pull quote
+up at the top, we have our
+paragraph content, and then
+we have our footer content
+beneath that, which includes our
+image and our little bio
+section down there
+at the bottom.
+So let's move on to our CSS.
+For our content element, you
+can see that we have three
+main fixed values here.
+We have our width at 590 pixels,
+and then we have our
+left margin and our padding.
+So we're first going to tackle
+converting the width.
+We're going to do the same
+thing that we did before.
+
+Our target is the width of
+the element in question.
+In this case, it's our content
+width of 590 pixels.
+Our context is going to be the
+width of the site container.
+
+If you remember, that
+was 940 pixels.
+So if we do that equation we
+get this value, and we move
+the decimal over two places
+to get our percentage.
+So if we pop that over into
+our CSS, now our width is
+proportional as opposed
+to fixed.
+
+So if we take a look at how this
+renders in the browser we
+can see that our content area
+is actually scaling
+appropriately.
+
+Now, obviously, we still need to
+fix our left margin and our
+padding because those
+still aren't right.
+
+As you can see, that
+our sidebar is
+still creeping over.
+But one thing to note here
+as well is our paragraph.
+Now a paragraph is a block
+element, which means it's
+going to inherit the width
+of its parent element.
+In this case, it's going to be
+the width of our content area.
+So the paragraph is actually
+going to scale with the width
+of our content area, which
+is a good thing.
+
+So it's one thing to keep in
+mind as you're creating your
+styles, to make sure that
+you're not setting fixed
+widths on elements that
+don't need it.
+
+All right, so now let's
+tackle our left
+margin and our padding.
+Now, we're going to use this
+same formula but there's a
+couple of different things that
+you need to keep in mind
+when dealing with margins
+and padding.
+
+Let's first talk
+about margins.
+
+Now, Ethan Marcotte talks about
+flexible margins, and he
+says that when setting flexible
+margins on an element
+you're context is the width
+of the elements container.
+So we're actually going to do
+the same exact thing that
+we've been doing and keep
+our context the same.
+
+Our margin width is going to be
+our target of 325 pixels.
+The width of our div class site
+container is going to be
+our context.
+And if we plug those
+values into the
+equation we get this value.
+Once again, we move our decimal
+point two places over,
+and now we've set our left
+margin to be this value, as
+opposed to a fixed value.
+
+But when we talk about padding
+we have to do things a little
+differently.
+When setting flexible padding on
+element, your context is
+the width of the
+element itself.
+And this makes sense if we go
+back to the box model because
+when we're talking about padding
+we're talking about
+the space within an element.
+
+Whereas margin you're talking
+about the space
+outside of the element.
+So as you can see from our
+graphic here, we have our box
+and the padding is inside.
+So our box width is actually
+going to be the context, as
+opposed to our main site
+container which was the
+context for our margin.
+
+So if we take a look at our
+equation once again, our
+target is the width of our
+padding, which in this case,
+was 20 pixels.
+But our context is going to be
+the width of the content area,
+since that's the box
+in question.
+
+So instead of 940 pixels that
+we use for our main site
+container, it's actually going
+to be 590 pixels, which is the
+width of our content area.
+And then we get this value.
+And now we have both flexible
+margins and flexible padding,
+in addition to, flexible
+width.
+And, as you can see, from this
+screenshot, once again, our
+site looks great, and now we've
+created a site on a
+fluid layout, as opposed to
+having it be a fixed width.
+
+So as you can see, the site
+scales based on the size of
+the view port.
+Now it's not perfect, but when
+we talk about designing for
+the universal web, we're talking
+about not knowing the
+size of every users view port.
+
+So by creating a site with a
+fluid layout we can create a
+site that flexes and is very
+fluid, as opposed to just
+being very fixed and
+very static.
+
+So now it's time for you to
+actually jump into the code
+and try some of the
+challenges.
+Good luck on these, and we'll
+see you in the next level.

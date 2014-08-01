@@ -1,0 +1,376 @@
+LEVEL 5: RESPONSIVE MEDIA
+﻿
+You're watching Journey into
+Mobile, and this is Level
+Five, Responsive Media.
+In this level, we're going to
+look at responsive images and
+retina images.
+
+Let's first get started with
+responsive images.
+Now up until this point, the
+images in our layouts have
+been fixed width.
+And this is an OK solution, but
+it's not great if we want
+to create responsive,
+scalable sites.
+
+What we want to do is actually
+have our images be able to
+scale with the viewport size,
+just like all of the rest of
+our content.
+So how do we do that?
+
+Well, there's really a two
+step process here.
+
+The first is we want to actually
+save out an image
+that is larger than
+we actually need.
+
+For instance in our Nautilus
+Restaurant site, we have this
+image, which is actually 640
+pixels by 490 pixels.
+Now, chances are we won't ever
+actually need that image at
+that size in our site, but what
+we can do is if we save
+it out larger, we can scale
+it down as necessary.
+And the way that we do that is
+we're actually going to add a
+max-width property to our image
+element in our CSS.
+And basically what this says is
+if we have a set width for
+our image, it tells the browser
+to fill that set width
+with 100% of the image.
+So even if the image container
+is smaller than the total size
+of the image, we still get
+the full resolution
+image in that container.
+
+I've already added the max-width
+property up at the
+top of my CSS styles to my image
+element, but now what I
+want to do is I want to call
+the specific image in the
+about section.
+
+As you can see, this specific
+image has a width of 29.6875%.
+So that means that the
+containing element is going to
+scale, and as a result the image
+is going to scale because
+of the max-width property.
+So let me go into the browser
+and actually show
+you how this works.
+
+Alright, so if we look at our
+Nautilus Restaurant site, I
+want you to pay attention to the
+image in the lower left.
+Now notice as I expand and
+contract the browser window,
+the image also scales.
+This is because we've
+incorporated our max-width
+property into our CSS and saved
+out a larger image than
+we actually need.
+So as we get smaller and to a
+mobile environment, we can
+optimize the image for that
+context, but then also we can
+optimize the image as
+we get into larger
+environments, as well.
+So not only can you do this with
+images, you can actually
+do this with any types of media,
+and that can include
+video, for instance.
+
+So if you have a video embed in
+your HTML, you can actually
+cause that to be responsive so
+that as your site scales, the
+video element can
+scale as well.
+
+Now just like practically
+everything else, there really
+is no IE6 support for this.
+So if you absolutely have to
+support IE6 in your designs,
+check out this link and it gives
+you a good idea of how
+to achieve that.
+
+Now prior to Windows 7, there
+was poor support for the
+max-width property, so if you
+need to support browsers-- in
+particular, Firefox 2 and IE7 on
+devices that are lower than
+Windows 7--
+take a look at this link where
+it teaches you how to use
+AlphaImageLoader, which is
+another solution to be able to
+achieve this max-width property
+on these devices and
+in these browsers.
+
+So that's how you scale images
+and other types of media
+responsively.
+But if you're looking for more
+robust options to do that,
+here are a few alternatives
+to look at.
+
+Now, these are JavaScript
+libraries that you can
+incorporate into your sites
+which give you more options as
+it comes to making things
+responsive.
+
+Alright, so let's talk
+about retina images.
+Now with the new iPad that
+recently came out and with
+iPhone 4 and iPhone 4S, retina
+images have become more of an
+issue, because as you know,
+retina screens have 1.5 to two
+times the pixel density, which
+means that if you save out a
+normal image on a retina screen
+it might look kind of
+blurry or even pixelated.
+And that's not good if you're
+trying to optimize your
+designs for a variety of devices
+on the universal web.
+
+So what do we do?
+Do we double the image size?
+Well, we could but that's not
+a great solution, because
+obviously you're talking about
+larger images, larger
+downloads, slower site speed.
+
+We can actually use media
+queries to target those
+specific devices and optimizer
+images for retina displays,
+and here's how we
+would do that.
+
+In this media query, we're
+targeting devices that have a
+pixel density of at least 1.5.
+Now the iPhone 4S, the 4, and
+the new iPad had have pixel
+densities of two, but some
+Android devices have 1.5.
+
+So what this is doing is saying
+at least 1.5 and up, so
+we can cover all of our bases.
+And what we do is we would put
+our styles within that media
+query, including our retina
+images, and here's how we
+would do that.
+
+Let's hypothetically say we have
+a logo file, logo.png,
+that has a size of 200 pixels.
+So the idea here is that we
+would want to actually double
+this image size, so we would
+save out a new logo file at
+400 pixels.
+And you can call it whatever you
+want but a good practice
+is to follow the iOS convention
+for retina images
+and that is the same name of
+the file with an @2x before
+the file extension.
+
+So let's go back to our demo
+site, the Nautilus Bar and
+Restaurant, and let's look at
+an example of how we can
+actually apply this.
+So as you can see in our
+Map It button, we
+have this map icon.
+The original size of it is 12
+pixels by 16 pixels, so what
+we want to do is save out a new
+image that is 24 pixels by
+32 pixels-- it's double
+the size--
+and then we would actually put
+that into our media query.
+
+First, let's recall our
+original CSS for this
+particular file.
+As you can see, we have a
+logo.png, and we have it set
+as a background image.
+
+So if we plug this into our
+media query, here's what it
+would look like.
+As you can see, we have our own
+new file, the logo@2x.png,
+but we've also included CSS3
+background size property.
+
+Now, why have we done this?
+Well, if we don't do this, then
+the browser is going to
+serve up this new image
+at its original size.
+Basically, what we wanted
+to do is keep the same
+constraints as the original
+image, the same size, just
+double the pixel density
+so that it looks
+better on retina screens.
+
+So by using the background size
+property, we can tell the
+browser what the original size
+of the image was, but just
+fill it with the better
+optimized image.
+And then as you can see in this
+screen shot, our image
+looks much better.
+It's much clearer and crisper
+than our original image was.
+So this point, we've seen two
+examples of how to make images
+responsive.
+
+We've talked about content
+images and how to actually
+scale those, and we've talked
+about background images,
+things like logos or like the
+map icon that you saw.
+But for both of those examples,
+we still have to
+worry about file size because
+we can save out a bunch of
+these very high resolution
+photos that would look great
+on, say, a retina screen, but
+if you didn't have a retina
+screen you'd have to download
+these huge files and it would
+look good, but it would just
+work really slowly and
+wouldn't be optimal.
+
+So what do we do?
+Well, Scott Jehl has created a
+pretty novel concept called
+PictureFill that really solves
+this problem that we have.
+And in this case, what we do is
+we create a picture element
+that's similar to the video
+element in HTML5.
+And what it does is it specifies
+different image
+sizes to be served by different
+devices, depending
+on if they're a retina device
+or a nonretina device.
+
+Let me show you how
+this works.
+So in this case, as you can see,
+we have our picture tag,
+and within that we have first
+our regular image,
+content-image.jpeg, that's going
+to be used for generic
+devices, nonretina devices.
+Then we're also including a
+larger image, one that can be
+served up on retina devices that
+has more pixel density.
+But in this case, we're only
+going to be serving that up
+for devices that have a minimum
+width of 800 pixels.
+
+So once again, we're using that
+media query concept where
+we're only going to be serving
+up that image if that device
+has a min width of 800 pixels.
+Now, the picture element
+doesn't actually exist.
+It's not part of
+the HTML5 spec.
+So what we have to do is include
+picturefill.js in the
+head of our HTML document.
+And who knows, maybe someday
+they'll actually adopt this to
+be a part of the HTML5 spec
+and we can use it
+as much as we want.
+
+Now what happens to those
+users that don't have
+JavaScript enabled?
+Well, we can create a fallback
+for those users.
+We can include the same code
+that we talked about before in
+our picture element, but at the
+bottom we can include our
+regular image in
+no script tags.
+And basically what that means is
+if the user has JavaScript
+disabled, then we're just going
+to serve up the regular
+image to that device.
+
+Congratulations, you've made
+it through all the videos.
+You still have some challenges
+to complete, and after that be
+sure to stay tuned for a wrap-up
+video where I'll give
+you some further resources to
+help you learn more about
+designing for the mobile web.
+Thanks for taking the time.
+I really appreciate it, and
+we'll talk to you later.

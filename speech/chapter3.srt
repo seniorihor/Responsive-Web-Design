@@ -1,0 +1,473 @@
+﻿LEVEL 3: ADAPTIVE ADVENTURES
+
+You're watching Journey into
+Mobile and this is Level
+Three, Adaptive Adventures.
+In this level, we're going
+to talk about what
+adaptive web design is.
+We're also going to talk about
+break points and why they
+matter, and then finally
+we're going to
+introduce media queries.
+
+So what is adaptive design?
+Well, essentially, adaptive
+design is designing for
+controlled adaptation.
+And basically what this means
+is you know the device or
+design context that you need
+to design for, and then you
+design accordingly.
+
+So let's use a real world
+example to better illustrate
+this concept, and we're
+going to use
+the design site Dribbble.
+Now, Dribbble was originally
+created as a desktop web app,
+and what they found is that
+more and more users were
+accessing the site through
+their mobile devices.
+Now if you have a smartphone, an
+iPhone, or an Android, you
+know desktop optimized sites
+work on a mobile device but
+usually you have to zoom in a
+lot and swipe a lot, and it's
+not exactly an optimal
+experience for mobile.
+
+So the guys at Dribbble realized
+this and started to
+think about, OK, what could they
+do in order to optimize
+the site for a mobile context.
+
+Well, they could have done
+one of two things.
+
+They could have created an
+entirely separate mobile site
+using separate markup, separate
+styles, separate
+content, which is a totally
+legitimate option if you need
+to do that.
+
+They could have created an
+adaptive design where they
+adapt the styles from the
+desktop site to a mobile
+environment, or they could
+create a responsive site,
+which we'll actually cover
+in a little bit.
+
+What they did is they chose an
+adaptive approach to their
+design and they adapted the
+styles of their CSS from the
+desktop environment to a mobile
+environment, creating
+an optimal environment if you're
+on your laptop or a
+desktop computer but also
+creating an optimal
+environment if you're
+accessing the
+site on a mobile device.
+
+Adaptive design doesn't mean
+that you're covering all the
+needs for the universal web.
+
+Usually what it means you are
+designing for a specific
+context, and that context might
+be the device, it might
+be screen size, it might
+be resolution.
+
+But the bottom line is you know
+what it is and you're
+specifically targeting
+that context.
+Now with any design, important
+to consider four basic
+principles.
+
+You need to know who your user
+is, you need to know how
+they're going to use the site,
+you need to know the context
+in which they're going to use
+it, so that could be what
+device they're using or in what
+environment they're using
+it, and then finally, you need
+to know what your content is
+and how that content is going to
+adapt based on the context.
+So to better illustrate this,
+we're going to use another
+demo site, and what we've done
+is created a fictitious
+restaurant called the Nautilus
+Bar and Restaurant.
+
+If we apply our four design keys
+to the restaurant site,
+what we come up with is that
+our user probably wants to
+either find the restaurant
+or learn more about it.
+
+The context is they're probably
+going to be accessing
+the site either on their laptop
+or maybe on a mobile
+device, and therefore their
+content needs to include
+location info, needs to include
+a menu, and needs to
+include information about
+the restaurant.
+
+It probably doesn't need to
+include those irrelevant
+iStock photos of random people
+eating, for instance.
+So in our case we're going to be
+adapting the design from a
+desktop environment to a mobile
+environment just like
+the Dribbble example.
+
+So here's what we want our site
+to look like in a mobile
+context, and here's what we want
+our site to look like in
+a desktop environment.
+
+Alright, so when we cover
+adaptive web design, we really
+want to look at three
+main things.
+
+The first is our markup, the
+second is our break points,
+and the third is going to be
+our media queries that
+actually make this work.
+
+So real quickly, let's go ahead
+and take a look at how
+the site is structured.
+
+We have our main header section
+up here at the top,
+then we have our menu content
+here in the middle, and
+finally we wrap up at the bottom
+of our page with our
+about section.
+
+Next, let's cover
+break points.
+What are break points?
+Well, essentially break
+points are where your
+design breaks down.
+Now, in an adaptive approach
+typically your break points
+are going to be the height and
+the width of the device or the
+context that you're targeting.
+
+Now when we talk about a mobile
+context, this could
+mean a number of different
+things.
+We have iPhones, we have
+Android phones, we have
+Kindles, we have iPads, so when
+we're talking about a
+mobile context, we need to
+know what specific mobile
+context we want to target.
+In our case, we're going to keep
+it simple and we're going
+to use the size for our
+standard iPhone.
+In this case, it's going to be
+a height of 480 pixels and
+it's going to be a width
+of 320 pixels.
+
+One of the things you might be
+asking is, well, what about
+the iPhone 4 or the iPhone 4S?
+Well, those have double the
+pixel density, but they still
+have the same size when it comes
+to browser size, so we
+actually don't need to double
+the size of our break points.
+We can keep the height and the
+width exactly the same, but
+when we talk about things like
+images we're going to have to
+deal with pixel density.
+We'll actually cover that
+in a future level.
+
+Alright, so how do we
+make this all work?
+Well, to make it work we have
+to use media queries.
+Now you might be familiar with
+media queries or at least the
+foundations for them if you've
+ever written, say, a print
+style sheet.
+And you might have seen
+something like this, where you
+put these in the head of
+your HTML document.
+And basically what this is
+saying is we're telling the
+browser, hey, for this
+particular device or for this
+particular thing, use this
+CSS style sheet.
+
+And the W3C actually came out
+with a new query a few years
+back where they actually
+targeted mobile devices.
+The problem with this is there's
+a number of different
+mobile devices, so if we use one
+style sheet it might look
+great on an iPhone but it might
+look terrible on, say,
+your mom's old Nokia.
+So this wasn't a good solution
+when we're talking about the
+universal web.
+
+So as part of the CSS3 spec, the
+media query was introduced
+and this is what
+it looks like.
+
+We have two main items here.
+
+First, we have the media type--
+in this case, we're
+looking at screens--
+and then we have the actual
+query itself,
+max-width of 320 pixels.
+And then beneath that, we put
+all of the styles that we want
+to be contained inside
+that media query.
+
+So what is this actually telling
+the browser to do?
+Well, essentially it's saying
+for any of viewport that is
+less than or equal to 320 pixels
+in width, use these
+styles over our original
+styles.
+And if we use max-width, it
+stands to reason that we can
+also use min-width.
+So in this case, what we're
+saying is for a viewport size
+that is greater than
+or equal to 1024
+pixels, use these styles.
+
+Now there are a number of other
+options that we could
+put into our media queries and
+we'll actually cover those in
+a future level, but for the time
+being we're just going to
+stick to these simple min-width
+and max-width examples.
+
+Alright, so where do you
+put your media queries?
+You could make a separate style
+sheet for each, but that
+would be pretty cumbersome and
+it would also increase the
+load time for your site.
+
+It's a better practice to put
+your media queries in a group
+at the bottom of your style
+sheet like you see here.
+It's easier to maintain, it's
+easier to find, and it doesn't
+increase the load time
+as much as including
+separate style sheets.
+
+So for our demo site, the
+Nautilus Bar and Restaurant,
+we can actually have two media
+queries, one at 320 pixels,
+which is the iPhone in portrait
+mode, and one at 480
+pixels, which is the iPhone
+in landscape mode.
+But if you recall back to level
+two when we talked about
+fluid layouts, we've actually
+built the site on a fluid
+foundation.
+
+So what that means is the site
+can actually scale based on
+the viewport size.
+And this is great, because it
+means that we don't have to do
+extra work.
+We can actually set the value
+of the media query to be the
+higher version-- in this
+case, 480 pixels--
+and we know that when we turn
+the iPhone into portrait mode,
+the design is going to
+scale appropriately
+because it's fluid.
+
+Alright, let's look at our
+styles for our desktop site,
+and then we'll actually adapt
+to those to our mobile site.
+
+So first, we're looking
+at our header area
+for our desktop site.
+As you can see, we have our main
+logo image and then we
+also have a bottom border
+of 15 pixels.
+Those are going to be the main
+things that we change as we
+adapt this portion to a
+mobile environment.
+And as you can see, we've
+included a separate logo file
+here, which is smaller,
+and we've also
+removed that bottom border.
+And here's what it looks like
+in a mobile environment.
+
+Next, what we want to do is we
+want to actually move the
+location and contact information
+beneath the logo.
+In the desktop environment
+it was floated to the
+right of the logo.
+So as you can see, these are
+our original desktop styles
+where we have a lot of floats
+and we also have a set width.
+As we adapt to a mobile
+environment, we're going to
+clear all of those floats.
+We're actually going to add a
+background color, and we're
+also going to stretch the width
+to be the full width of
+the viewport.
+And as you can see, now we have
+all of that information,
+it looks great beneath
+the logo.
+
+Now for our menu section in our
+desktop environment, we
+have our two menu blocks floated
+to the left and the
+right of each other, but this
+isn't going to work on a
+mobile environment because those
+boxes would get really
+small and you wouldn't be able
+to even read the menu.
+So what we want to do is
+actually stack these on top of
+one another.
+So as you can see in our desktop
+styles, we've defined
+a width and a percentage and
+we have those floats.
+
+As we adapt that to a mobile
+environment, we're going to
+actually allow the width to
+inherit the full width of the
+viewport size, and then we're
+going to clear those floats.
+So instead of having them
+floated next to each other,
+we're actually going to have
+them stacked on top of each
+other, which is a much more
+readable design for a mobile
+environment.
+
+So let me show you what that
+looks like in the browser.
+So first let's take a look
+at our desktop site.
+As you can see, we have our logo
+up here at the top with
+our location information
+floated to the right.
+We have our menu section here,
+the two blocks, and then we
+have our about section
+beneath that.
+Let's go ahead and take a look
+at how we've adapted these
+styles to a mobile
+environment.
+And as we pull up our iPhone
+here, you can see that we have
+our logo centered-- it's a
+little smaller-- and we have
+all of our location information
+stacked beneath that.
+
+Our menu section is stacked on
+top of each other, and we've
+actually stretched the width
+of the image in our about
+information to the full
+width of the viewport.
+So this is an optimal design
+for mobile, and this is an
+optimal design for
+desktop, as well.
+
+Alright, now it's time for you
+to work on some challenges.
+Good luck on those and we'll
+see you in the next level.

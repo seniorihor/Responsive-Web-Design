@@ -1,0 +1,376 @@
+﻿LEVEL 4: RESPONSIVE ADVENTURES
+
+You're watching Journey into
+Mobile, and this is Level 4,
+Responsive Adventures.
+In this level, we're going to be
+talking a little bit about
+the Mobile First design
+approach, then we're going to
+talk about how to apply
+responsive design, and
+finally, we're going to
+wrap up with some
+advanced media queries.
+
+So when we talk about the Mobile
+First approach, Luke
+Wroblewski, who sort of
+pioneered the concept, has
+three important items
+to consider.
+He talks about Mobile First
+as preparing you for the
+explosive growth and
+new opportunities
+on the mobile internet.
+
+Secondly, the Mobile First
+approach forces you to focus.
+
+And finally, it enables you to
+innovate in ways that you
+previously couldn't.
+
+The Mobile First approach forces
+you to focus on the
+most important things
+in your design.
+It forces you to simplify
+the content.
+It forces you to prioritize the
+layout, and it forces you
+to optimize the user
+experience.
+Because, if you think about it,
+in a mobile design, you
+don't have near the screen real
+estate as you do in a
+desktop environment.
+So your space is much more
+valuable in a mobile design,
+which means you can't just have
+filler material, random
+photos, or random pieces
+of information.
+You really have to prioritize.
+And this is a great design
+concept because as we talk
+about the universal web, we need
+to make sure that both
+our design and our content
+is optimized for this.
+The Mobile First approach
+provides great foundation for
+responsive design.
+
+Now, one of the things you
+might be asking is, is
+adaptive design the same thing
+as responsive design?
+Well, all responsive designs
+could be classified as
+adaptive designs, but not
+all adaptive designs are
+responsive.
+
+You see, responsive designs are
+essentially fluid sites
+with a series of break points,
+whereas adaptive designs are
+selectively optimized for the
+context that you're targeting.
+
+Ethan Marcotte talks about
+responsive designs as
+providing continuity
+between context.
+And that responsive designs
+are also portable and
+accessible.
+
+And when we're talking about
+designing for the universal
+web, these concepts are more
+important than ever.
+So let's kind of recap where
+we've come thus far.
+We talked about fluid layouts,
+which are great except they do
+have limitations when it comes
+to view port size.
+As you saw, as we started to get
+smaller and smaller, the
+site basically became
+unreadable.
+So that's not a great
+universal solution.
+
+We also talked about adaptive
+designs, which are great for
+targeted context, but it doesn't
+necessarily cover all
+of the universal web.
+Now we're talking about
+responsive design, which is
+both flexible and universal.
+Because, again, we're providing
+continuity between a
+variety of different contexts.
+Which means we can ensure that
+there's an optimal design
+experience, whether you're
+looking at the site in a
+desktop environment, a mobile
+environment, or, really,
+anywhere in between.
+
+When we talk about responsive
+design, our content defines
+our break points.
+Remember, in adaptive design,
+the height and width of the
+device determined
+our break point.
+But in this case, our break
+points are determined by the
+content of our site and where
+that breaks down.
+Because, remember, in responsive
+design, our goal is
+to create a seamless design
+experience across a variety of
+different contexts.
+
+So where our site design breaks
+down, that's where we
+want to make sure
+we optimize it.
+
+So back to our demo site, The
+Nautilus Bar and Restaurant.
+As we look at our site we can
+see that at around 870 pixels
+our site gets a little
+crammed up at the top
+in our header section.
+So this is going to be our first
+break point where we
+realize a need to optimize
+the design for
+this view port size.
+
+So here's how we're going
+to go about that.
+We're going to use the same
+formatting for our media query
+as we discussed before, and
+we're going to set our max
+width at 870 pixels.
+I'm just going to give you a
+couple of examples in our CSS
+about what we want
+to change here.
+I'm not necessarily going to
+go over all of the changes,
+but what you need to remember
+is that for any media query
+that you're inputting into your
+site, everything that you
+want changed needs to be within
+that media query.
+
+So, for instance, if you want
+to clear a float you need to
+make sure that you actually
+define that in your media
+query, otherwise it's just going
+to inherit the property
+that was in your original
+styles.
+So what we've done in this case
+is we're actually going
+to use a new logo image, and
+we're going to move all of our
+location information beneath
+that logo image.
+
+So you can see the styles
+that we've used to
+achieve that here.
+And here's what it looks
+like in the browser.
+So, as you can see, we've moved
+everything underneath
+our logo, we've flushed or
+information left and right,
+and this is a great optimal
+design for that break point,
+which we talked about earlier.
+
+Now we also see another issue
+at about 768 pixels.
+At this point our menu items
+start to get a little too
+skinny, and the text becomes
+hard to read.
+So this would be another good
+place to set a break point.
+Now, we've let our content
+define where our break points
+are, but it's also a good point
+to notice here that's
+768 pixels is a standard width
+for tablet devices.
+So, yes, you want to have your
+content drive the break points
+for your site, but it's also a
+good idea to keep in mind some
+of the devices that you have.
+In order to optimize
+for those as well.
+
+So as you can see from our
+styles here, what we're
+changing is we're actually going
+to stack our menu items
+on top of each other similar to
+what we did in our mobile
+environment.
+
+We're going to clear some
+floats, and we're going to
+stretch the width across
+the view port.
+So, as you can see, instead of
+those being skinny and floated
+to the left and right of each
+other, we've got them stacked,
+the width stretches across the
+view port, and this is much
+easier to read now.
+
+Finally, we see another issue
+happening at about 510 pixels
+where the contact information
+starts to break below the
+location information.
+So we could set another break
+point here, but if you
+remember back to our adaptive
+level, we actually have
+already set our mobile
+styles with a media
+query at 480 pixels.
+
+And, once again, since this
+site is built on a fluid
+foundation, our site can
+scale appropriately.
+So instead of declaring a whole
+other media query, and
+having more and more styles
+put in there, why not just
+move our media query up from
+480 pixels to 510 pixels.
+So, in this case, at 510 pixels
+our site is going to
+break into those mobile styles,
+it's going to clear up
+that issue that we saw, and it's
+also going to optimize
+for those device sizes.
+
+All right, so we're going
+to start at our
+desktop view port size.
+And what I'm going to do is
+scale the browser down.
+And as you can see, at those
+break points that we defined,
+the site design changes.
+So instead of our site breaking,
+we actually have our
+site being optimized for these
+break point sizes.
+And we can get all the way down
+to a mobile environment.
+So from a mobile environment
+all the way up to a desktop
+environment, our site design
+it's optimized for the user.
+
+Now, nobody's going to sit here
+and scale their browser
+up and down, except if you're
+a designer or a developer.
+So our goal here is not
+necessarily to create a design
+that works when you scale your
+browser size up and down, the
+point is that at each of those
+sizes the site design works.
+So if a user is accessing a
+site on a mobile device, on
+a tablet device, on a small
+laptop, on a large laptop, on
+a large monitor, the site design
+is going to look great
+and it's going to be optimized
+for the user experience.
+
+Finally, we're going to take
+a quick look at some of the
+other options that we can
+include in our media queries.
+
+So here are a few charts from
+Ethan Marcotte's book on
+responsive web design, and
+it shows you a number of
+different options that you can
+incorporate into your media
+queries besides just min
+width and max width.
+So let's look at one of
+these as an example.
+
+So if we go back to our demo
+site, here are some
+screenshots of the site both
+in portrait mode and in
+landscape mode.
+
+Now, we've already optimized
+the design with our media
+queries, but what if we actually
+wanted to call
+specific device orientation.
+So what if we wanted to have
+specific styles, if the site
+was in portrait mode, or the
+site was in landscape mode?
+Well, we can actually do that by
+incorporating those values
+into our media queries like
+you can see here.
+So instead of min width or max
+width, what it becomes is
+orientation portrait or
+orientation landscape,
+depending on what you
+want to target.
+The bottom line is, by using
+media queries it gives us a
+ton of flexibility in how we
+design our sites, and how our
+sites are optimized for a number
+of different contexts,
+and a number of different
+devices.
+
+Now it's time for you to work
+on some challenges.
+Good luck with those.
+And we'll jump into
+the next level.
